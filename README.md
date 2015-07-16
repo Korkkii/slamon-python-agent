@@ -1,5 +1,7 @@
-SLAMon Agent
-============
+SLAMon Python Agent
+===================
+
+Python implementation of [SLAMon](https://github.com/SLAMon/SLAMon) agent.
 
 Prerequisites
 -------------
@@ -16,10 +18,9 @@ Required libraries for running the tests:
 Installing the agent
 --------------------
 
-setup.py in project root is currently set up installing only the agent. To easily install 
-the agent with all required dependencies and the *slamon-agent* command line utility, use e.g. pip:
+To easily install the agent with all required dependencies and the *slamon-agent* command line utility, use e.g. pip.
 
-    $ pip install path/to/SLAmon
+    $ pip install path/to/SLAMon
 
 Running the agent
 -----------------
@@ -28,8 +29,8 @@ Currently there is two ways for running the agent: a command line script and emb
 
 ### Running the agent using command line script ###
 
-*slamon-agent* command line utility is the simplest way running the agent. AFM Url, concurrent executor count and
-modules to load handlers from are defined as command line arguments as follows:
+*slamon-agent* command line utility is the simplest way running the agent. Agent Fleet Manager (AFM) Url, 
+concurrent executor count and modules to load handlers from are defined as command line arguments as follows:
 
     $ slamon-agent --help
     usage: slamon-agent-script.py [-h] -u URL [-l LOAD] [-w DEFAULT_WAIT]
@@ -71,7 +72,7 @@ Developing task handlers
 ------------------------
 
 Developing task handler is attempted to make as easy as possible. The agent
-core application will take care of agent - AFM communication, so that
+core application will take care of the communication between an agent and the AFM, so that
 the task handler can be AFM agnostic and purely focus on just
 executing the task.
  
