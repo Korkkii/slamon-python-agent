@@ -14,7 +14,7 @@ class TaskHandler(object):
         return handler
 
     @classmethod
-    def register(cls, callable, name: str, version: int):
+    def register(cls, callable, name, version):
         """
         Utility to register any callable as task handler.
         :param callable: Callable taking one positional argument (input data) and returning dictionary of output params.
@@ -31,7 +31,7 @@ class TaskHandler(object):
         }
 
     @classmethod
-    def create(cls, name: str, version: int):
+    def create(cls, name, version):
         """
         Get corresponding handler for task.
 

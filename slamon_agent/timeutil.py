@@ -1,12 +1,15 @@
+from datetime import datetime
+
+from dateutil import parser, tz
+
+
 def now():
     """
     Utility to get current datetime with local timezone data.
     :return: datetime object with current time and timezone
     """
-    import dateutil.tz
-    import datetime
 
-    return datetime.datetime.now(tz=dateutil.tz.tzlocal())
+    return datetime.now(tz=tz.tzlocal())
 
 
 def parse(datetime_str):
@@ -15,9 +18,8 @@ def parse(datetime_str):
     :param datetime_str: datetime string with timezone data e.g. '2012-04-23T18:25:43.511Z'
     :return: datetime object with timezone data
     """
-    import dateutil.parser
 
-    datetime = dateutil.parser.parse(datetime_str)
+    datetime = parser.parse(datetime_str)
     if not datetime.tzinfo:
         raise Exception("No time zone info in date time input!")
     return datetime

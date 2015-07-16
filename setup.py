@@ -19,7 +19,7 @@ or via command line script.\nRead more from the repository for examples and inst
         'slamon_agent.handlers',
     ],
     requires=[
-        'python-dateutil',
+        'python_dateutil',
         'requests'
     ],
     entry_points={

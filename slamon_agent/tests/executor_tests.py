@@ -1,6 +1,9 @@
 import unittest
 import logging
+from unittest.mock import ANY, Mock
 
+from slamon_agent.executor import Executor
+from slamon_agent.handlers.task_handler import TaskHandler
 
 logging.basicConfig(
     format='%(thread)d:%(levelname)s:%(message)s',
@@ -10,8 +13,6 @@ logging.basicConfig(
 
 class ExecutorTests(unittest.TestCase):
     def test_unknown_handler(self):
-        from slamon.agent.executor import Executor
-        from mock import Mock, ANY
 
         mock_callback = Mock()
 
@@ -32,10 +33,6 @@ class ExecutorTests(unittest.TestCase):
         )
 
     def test_raising_handler(self):
-        from slamon.agent.executor import Executor
-        from slamon.agent.handlers import TaskHandler
-        from mock import Mock, ANY
-
         mock_handler = Mock(side_effect=Exception)
         mock_callback = Mock()
 
@@ -61,10 +58,6 @@ class ExecutorTests(unittest.TestCase):
         )
 
     def test_simple_handler(self):
-        from slamon.agent.executor import Executor
-        from slamon.agent.handlers import TaskHandler
-        from mock import Mock
-
         mock_handler = Mock()
         mock_callback = Mock()
 

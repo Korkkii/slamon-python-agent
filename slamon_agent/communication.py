@@ -1,5 +1,8 @@
 import logging
 
+from requests.api import post
+from requests.exceptions import RequestException
+
 
 class TemporaryError(Exception):
     """
@@ -42,10 +45,9 @@ class Communicator(object):
         :param json:
         :return:
         """
-        import requests
 
         try:
-            r = requests.post(
+            r = post(
                 self.afm_url + path,
                 json=json
             )
@@ -54,7 +56,7 @@ class Communicator(object):
             elif 500 <= r.status_code < 600:
                 raise TemporaryError('AFM responded with server error status: {0}'.format(r.status_code))
             return r
-        except requests.RequestException as e:
+        except RequestException as e:
             raise TemporaryError(e)
 
     def request_tasks(self, **kwargs):

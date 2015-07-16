@@ -2,28 +2,24 @@ import unittest
 import logging
 import json
 import uuid
-from unittest.mock import Mock
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import responses
 import dateutil.parser
 
-from slamon_agent.communication import FatalError
-from slamon_agent.communication import Communicator
+from slamon_agent.communication import Communicator, FatalError
 from slamon_agent.agent import Agent
 from slamon_agent.handlers import TaskHandler
 from slamon_agent import timeutil
-
 
 logging.basicConfig(
     format='%(thread)d:%(levelname)s:%(message)s',
     level=logging.DEBUG
 )
 
-
+@patch("slamon_agent.agent.time.sleep", return_value=None)
 class AgentTests(unittest.TestCase):
     def _run_agent_with_responses_callback(self, callback):
-        from slamon.agent.agent import Agent
 
         responses.add_callback(
             responses.POST, 'https://localhost/tasks',
@@ -35,7 +31,7 @@ class AgentTests(unittest.TestCase):
         agent.run()
 
     @responses.activate
-    def test_exit_on_error(self):
+    def test_exit_on_error(self, mock_sleep):
 
         class CountResponses(object):
 
@@ -60,7 +56,7 @@ class AgentTests(unittest.TestCase):
         self.assertEqual(len(responses.calls), 3, 'Agent should have requested for tasks three times!')
 
     @responses.activate
-    def test_required_fields_in_request(self):
+    def test_required_fields_in_request(self, mock_sleep):
 
         mock_callback = Mock(side_effect=FatalError('Exception to exit the agent ASAP.'))
         with self.assertRaises(FatalError):
@@ -80,7 +76,7 @@ class AgentTests(unittest.TestCase):
         for name, data in request_data['agent_capabilities']:
             self.assertIsInstance(data['version'], int)
 
-    def test_runs_task(self):
+    def test_runs_task(self, mock_sleep):
 
         class RequestTasksMock(object):
             def __init__(self):

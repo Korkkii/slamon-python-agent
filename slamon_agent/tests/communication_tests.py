@@ -1,6 +1,7 @@
 import unittest
 import logging
 import json
+
 import responses
 
 from slamon_agent.communication import Communicator, FatalError, TemporaryError

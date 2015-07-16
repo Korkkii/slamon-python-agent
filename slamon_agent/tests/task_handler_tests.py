@@ -1,13 +1,12 @@
-from slamon.agent.handlers import *
 import unittest
+
 import responses
 
-from slamon_agent.handlers import *
 from slamon_agent.handlers import TaskHandler
+from slamon_agent.handlers.url_http_status_task_handler import url_http_status_task_handler
 
 
 def register_1():
-    from slamon.agent.handlers import TaskHandler
 
     @TaskHandler('test-1', 1)
     def test_handler(input):
@@ -15,9 +14,8 @@ def register_1():
 
 
 def register_2():
-    import slamon.agent
 
-    @slamon.agent.handlers.TaskHandler('test-2', 1)
+    @TaskHandler('test-2', 1)
     def test_handler(input):
         return input
 
@@ -41,10 +39,8 @@ class TaskHandlerTests(unittest.TestCase):
         responses.add(responses.GET, 'http://test.url.whatever', body="")
         responses.add(responses.GET, 'http://test.url.something_else', status=404, body="")
 
-        assert(url_http_status_task_handler.url_http_status_task_handler(
-            input_params={'url': 'http://test.url.whatever'})['status'] == 200)
-        assert(url_http_status_task_handler.url_http_status_task_handler(
-            input_params={'url': 'http://test.url.something_else'})['status'] == 404)
+        assert(url_http_status_task_handler(input_params={'url': 'http://test.url.whatever'})['status'] == 200)
+        assert(url_http_status_task_handler(input_params={'url': 'http://test.url.something_else'})['status'] == 404)
 
     def test_url_http_status_invalid(self):
         with self.assertRaises(Exception):
