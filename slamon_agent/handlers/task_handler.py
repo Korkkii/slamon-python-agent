@@ -5,7 +5,7 @@ class TaskHandler(object):
 
     _handlers = {}
 
-    def __init__(self, name: str, version: int):
+    def __init__(self, name, version):
         self.name = name
         self.version = version
 

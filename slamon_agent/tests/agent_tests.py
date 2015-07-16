@@ -17,6 +17,7 @@ logging.basicConfig(
     level=logging.DEBUG
 )
 
+
 @patch("slamon_agent.agent.time.sleep", return_value=None)
 class AgentTests(unittest.TestCase):
     def _run_agent_with_responses_callback(self, callback):
