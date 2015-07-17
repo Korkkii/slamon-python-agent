@@ -1,22 +1,21 @@
 SLAMon Python Agent
 ===================
-
-[![Build Status](ci_status)](https://travis-ci.org/Korkkii/slamon-python-agent.svg?branch=badge_testing)
+[![Build Status][ci_status]](https://travis-ci.org/SLAMon/slamon-python-agent.svg?branch=master)
 [![PyPI version](https://badge.fury.io/py/slamon-agent.svg)](http://badge.fury.io/py/slamon-agent)
-[![Coverage Status](coveralls)](https://coveralls.io/github/Korkkii/slamon-python-agent?branch=badge_testing)
-[![Code Health](codehealth)](https://landscape.io/github/Korkkii/slamon-python-agent/badge_testing)
-[![License](license)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Coverage Status][coveralls]](https://coveralls.io/github/SLAMon/slamon-python-agent?branch=master)
+[![Code Health][codehealth]](https://landscape.io/github/SLAMon/slamon-python-agent/master)
+[![License][license]](http://www.apache.org/licenses/LICENSE-2.0)
 [![PyPI](https://img.shields.io/pypi/pyversions/slamon-agent.svg)](pypi)
-[![Requirements Status](requirements_img)](requirements)
+[![Requirements Status][requirements_img]](requirements)
 
-[ci_status]: https://travis-ci.org/Korkkii/slamon-python-agent.svg?branch=badge_testing
+[ci_status]: https://travis-ci.org/SLAMon/slamon-python-agent.svg?branch=master
 [latest_version]: https://badge.fury.io/py/slamon-agent.svg
-[coveralls]: https://coveralls.io/repos/Korkkii/slamon-python-agent/badge.svg?branch=badge_testing&service=github
-[codehealth]: https://landscape.io/github/Korkkii/slamon-python-agent/badge_testing/landscape.svg?style=flat
+[coveralls]: https://coveralls.io/repos/SLAMon/slamon-python-agent/badge.svg?branch=master&service=github
+[codehealth]: https://landscape.io/github/SLAMon/slamon-python-agent/master/landscape.svg?style=flat
 [license]: https://img.shields.io/:license-Apache%20License%20v2.0-blue.svg
 [pypi]: https://pypi.python.org/pypi/slamon-agent/
-[requirements_img]: https://requires.io/github/Korkkii/slamon-python-agent/requirements.svg?branch=badge_testing
-[requirements]: https://requires.io/github/Korkkii/slamon-python-agent/requirements/?branch=badge_testing
+[requirements_img]: https://requires.io/github/SLAMon/slamon-python-agent/requirements.svg?branch=master
+[requirements]: https://requires.io/github/SLAMon/slamon-python-agent/requirements/?branch=master
 
 Python implementation of [SLAMon](https://github.com/SLAMon/SLAMon) agent.
 
@@ -26,7 +25,7 @@ Prerequisites
 Required libraries for running the agent:
 
     $ pip install requests
-    $ pip install python-dateutils
+    $ pip install python-dateutil
 
 Required libraries for running the tests:
 
@@ -56,18 +55,22 @@ concurrent executor count and modules to load handlers from are defined as comma
     optional arguments:
       -h, --help            show this help message and exit
       -u URL, --url URL     Coordinator URL
-      -l LOAD, --load LOAD  Load handlers from specified module
+      -l LOAD, --load LOAD  Load handlers from specified module or package e.g. slamon_agent.handlers
       -w DEFAULT_WAIT, --default-wait DEFAULT_WAIT
                             Seconds to wait before reconnection after connection
                             failure.
       -x NUM_EXECUTORS, --num-executors NUM_EXECUTORS
                             Number of concurrent task executors.
+    
+Starting an agent with only the wait task handler.
+
+    $ slamon-agent -u http://my_afm.url.com -l slamon_agent.handlers.wait_task_handler
 
 ### Running the agent from python script ###
 
 ```python
-from slamon-agent.handlers import *
-from slamon-agent import Agent
+from slamon_agent.handlers import *
+from slamon_agent import Agent
 agent = Agent('http://localhost:8080')
 agent.run()
 ```
@@ -99,7 +102,7 @@ do their work synchronously and return response data as a dictionary.
 Task handlers are registered using `@TaskHandler` decorator.
 
 ```python
-from slamon-agent.handlers import TaskHandler
+from slamon_agent.handlers import TaskHandler
 
 @TaskHandler("wait", 1)
 def wait_task_handler(input_params):
@@ -107,3 +110,4 @@ def wait_task_handler(input_params):
    timeout = float(input_params['time']) - 0.5 + random.random()
    return {'time': timeout}
 ```
+
