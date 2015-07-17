@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='slamon-agent',
-    version='0.9.0',
+    version='0.9.0.post2',
     description='Python implementation of a SLAMon Agent',
     url='https://github.com/SLAMon/slamon-python-agent',
     author='SLAMon',
@@ -18,9 +18,9 @@ or via command line script.\nRead more from the repository for examples and inst
         'slamon_agent',
         'slamon_agent.handlers',
     ],
-    requires=[
-        'python_dateutil',
-        'requests'
+    install_requires=[
+        'python_dateutil>= 2.4.2, <3.0',
+        'requests>=2.5.4.1, <3.0'
     ],
     entry_points={
         'console_scripts': [
