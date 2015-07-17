@@ -1,6 +1,9 @@
 SLAMon Python Agent
 ===================
 
+[![Build Status](https://travis-ci.org/Korkkii/slamon-python-agent.svg?branch=agent_separation)]\
+(https://travis-ci.org/Korkkii/slamon-python-agent)
+
 Python implementation of [SLAMon](https://github.com/SLAMon/SLAMon) agent.
 
 Prerequisites

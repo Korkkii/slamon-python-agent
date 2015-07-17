@@ -4,13 +4,13 @@ from setuptools import setup
 
 setup(
     name='slamon-agent',
-    version='0.9.0.post2',
+    version='0.9.0.post3',
     description='Python implementation of a SLAMon Agent',
     url='https://github.com/SLAMon/slamon-python-agent',
     author='SLAMon',
     author_email='slamon.organization@gmail.com',
     license='Apache License v2.0',
-    platforms=['Python 3.4+'],
+    platforms=['Python 3.3+'],
     long_description='The implementation of SLAMon agent on Python 3.4. The agent connects to an Agent Fleet Manager, \
 and executes tasks retrieved.\nAimed to be used on Unix platforms. The agent can be used either from a python script \
 or via command line script.\nRead more from the repository for examples and instructions.',
@@ -30,6 +30,7 @@ or via command line script.\nRead more from the repository for examples and inst
     classifiers=[
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'License :: OSI Approved :: Apache Software License',
         'Topic :: Software Development :: Libraries :: Python Modules',
