@@ -2,9 +2,13 @@ SLAMon Python Agent
 ===================
 
 [![Build Status](ci_status)](https://travis-ci.org/Korkkii/slamon-python-agent)
+
 [![Latest Version](latest)](pypi)
+
 [![License](plicense)](pypi)
+
 [![Supported versions](versions)](pypi)
+
 [![License](license)](https://github.com/SLAMon/slamon-python-agent)
 
 [ci_status]: https://travis-ci.org/Korkkii/slamon-python-agent.svg?branch=agent_separation
@@ -18,7 +22,7 @@ Python implementation of [SLAMon](https://github.com/SLAMon/SLAMon) agent.
 
 Prerequisites
 -------------
-https://img.shields.io/github/forks/badges/shields.svg
+
 Required libraries for running the agent:
 
     $ pip install requests
