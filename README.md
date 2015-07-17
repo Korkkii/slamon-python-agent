@@ -1,13 +1,24 @@
 SLAMon Python Agent
 ===================
 
-[![Build Status](https://travis-ci.org/Korkkii/slamon-python-agent.svg?branch=agent_separation)](https://travis-ci.org/Korkkii/slamon-python-agent)
+[![Build Status](ci_status)](https://travis-ci.org/Korkkii/slamon-python-agent)
+[![Latest Version](latest)](pypi)
+[![License](plicense)](pypi)
+[![Supported versions](versions)](pypi)
+[![License](license)](https://github.com/SLAMon/slamon-python-agent)
 
+[ci_status]: https://travis-ci.org/Korkkii/slamon-python-agent.svg?branch=agent_separation
+[latest_version]: https://pypip.in/version/slamon-agent/badge.svg
+[pypi]: https://pypi.python.org/pypi/slamon-agent/
+[latest]: https://img.shields.io/pypi/v/slamon-agent.svg
+[plicense]: https://img.shields.io/pypi/l/slamon-agent.svg
+[versions]:https://img.shields.io/pypi/pyversions/slamon-agent.svg
+[license]: https://img.shields.io/badge/license-New%20BSD-blue.svg
 Python implementation of [SLAMon](https://github.com/SLAMon/SLAMon) agent.
 
 Prerequisites
 -------------
-
+https://img.shields.io/github/forks/badges/shields.svg
 Required libraries for running the agent:
 
     $ pip install requests
@@ -22,12 +33,12 @@ Installing the agent
 
 To easily install the agent with all required dependencies and the *slamon-agent* command line utility, use e.g. pip.
 
-    $ pip install path/to/SLAMon
+    $ pip install slamon-agent
 
 Running the agent
 -----------------
 
-Currently there is two ways for running the agent: a command line script and embedding agent in your own script.
+There are two ways for running the agent: a command line script and embedding agent in your own script.
 
 ### Running the agent using command line script ###
 
@@ -51,8 +62,8 @@ concurrent executor count and modules to load handlers from are defined as comma
 ### Running the agent from python script ###
 
 ```python
-from slamon.agent.handlers import *
-from slamon.agent import Agent
+from slamon-agent.handlers import *
+from slamon-agent import Agent
 agent = Agent('http://localhost:8080')
 agent.run()
 ```
@@ -64,7 +75,7 @@ the modules you want to load task handlers from:
 from my_custom_handler_package import *
 import my_custom_handler_module
 
-from slamon.agent import Agent
+from slamon-agent import Agent
 agent = Agent('http://localhost:8080')
 agent.run()
 ```
@@ -84,7 +95,7 @@ do their work synchronously and return response data as a dictionary.
 Task handlers are registered using `@TaskHandler` decorator.
 
 ```python
-from slamon.agent.handlers import TaskHandler
+from slamon-agent.handlers import TaskHandler
 
 @TaskHandler("wait", 1)
 def wait_task_handler(input_params):
