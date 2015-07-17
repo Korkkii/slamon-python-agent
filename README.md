@@ -2,18 +2,19 @@ SLAMon Python Agent
 ===================
 
 [![Build Status](ci_status)](https://travis-ci.org/Korkkii/slamon-python-agent.svg?branch=badge_testing)
-[![PyPI version](latest_version)](http://badge.fury.io/py/slamon-agent)
+[![PyPI version](https://badge.fury.io/py/slamon-agent.svg)](http://badge.fury.io/py/slamon-agent)
 [![Coverage Status](coveralls)](https://coveralls.io/github/Korkkii/slamon-python-agent?branch=badge_testing)
 [![Code Health](codehealth)](https://landscape.io/github/Korkkii/slamon-python-agent/badge_testing)
 [![License](license)](http://www.apache.org/licenses/LICENSE-2.0)
 [![PyPI](https://img.shields.io/pypi/pyversions/slamon-agent.svg)](pypi)
 [![Requirements Status](requirements_img)](requirements)
 
-[ci_status]: https://travis-ci.org/Korkkii/slamon-python-agent.svg
+[ci_status]: https://travis-ci.org/Korkkii/slamon-python-agent.svg?branch=badge_testing
 [latest_version]: https://badge.fury.io/py/slamon-agent.svg
 [coveralls]: https://coveralls.io/repos/Korkkii/slamon-python-agent/badge.svg?branch=badge_testing&service=github
 [codehealth]: https://landscape.io/github/Korkkii/slamon-python-agent/badge_testing/landscape.svg?style=flat
 [license]: https://img.shields.io/:license-Apache%20License%20v2.0-blue.svg
+[pypi]: https://pypi.python.org/pypi/slamon-agent/
 [requirements_img]: https://requires.io/github/Korkkii/slamon-python-agent/requirements.svg?branch=badge_testing
 [requirements]: https://requires.io/github/Korkkii/slamon-python-agent/requirements/?branch=badge_testing
 
