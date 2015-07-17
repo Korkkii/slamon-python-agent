@@ -1,23 +1,22 @@
 SLAMon Python Agent
 ===================
 
-[![Build Status](ci_status)](https://travis-ci.org/Korkkii/slamon-python-agent)
+[![Build Status](ci_status)](https://travis-ci.org/Korkkii/slamon-python-agent.svg?branch=badge_testing)
+[![PyPI version](latest_version)](http://badge.fury.io/py/slamon-agent)
+[![Coverage Status](coveralls)](https://coveralls.io/github/Korkkii/slamon-python-agent?branch=badge_testing)
+[![Code Health](codehealth)](https://landscape.io/github/Korkkii/slamon-python-agent/badge_testing)
+[![License](license)](http://www.apache.org/licenses/LICENSE-2.0)
+[![PyPI](https://img.shields.io/pypi/pyversions/slamon-agent.svg)](pypi)
+[![Requirements Status](requirements_img)](requirements)
 
-[![Latest Version](latest)](pypi)
+[ci_status]: https://travis-ci.org/Korkkii/slamon-python-agent.svg
+[latest_version]: https://badge.fury.io/py/slamon-agent.svg
+[coveralls]: https://coveralls.io/repos/Korkkii/slamon-python-agent/badge.svg?branch=badge_testing&service=github
+[codehealth]: https://landscape.io/github/Korkkii/slamon-python-agent/badge_testing/landscape.svg?style=flat
+[license]: https://img.shields.io/:license-Apache%20License%20v2.0-blue.svg
+[requirements_img]: https://requires.io/github/Korkkii/slamon-python-agent/requirements.svg?branch=badge_testing
+[requirements]: https://requires.io/github/Korkkii/slamon-python-agent/requirements/?branch=badge_testing
 
-[![License](plicense)](pypi)
-
-[![Supported versions](versions)](pypi)
-
-[![License](license)](https://github.com/SLAMon/slamon-python-agent)
-
-[ci_status]: https://travis-ci.org/Korkkii/slamon-python-agent.svg?branch=agent_separation
-[latest_version]: https://pypip.in/version/slamon-agent/badge.svg
-[pypi]: https://pypi.python.org/pypi/slamon-agent/
-[latest]: https://img.shields.io/pypi/v/slamon-agent.svg
-[plicense]: https://img.shields.io/pypi/l/slamon-agent.svg
-[versions]:https://img.shields.io/pypi/pyversions/slamon-agent.svg
-[license]: https://img.shields.io/badge/license-New%20BSD-blue.svg
 Python implementation of [SLAMon](https://github.com/SLAMon/SLAMon) agent.
 
 Prerequisites
