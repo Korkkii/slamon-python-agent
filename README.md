@@ -1,21 +1,14 @@
 SLAMon Python Agent
 ===================
-[![Build Status][ci_status]](https://travis-ci.org/SLAMon/slamon-python-agent.svg?branch=master)
-[![PyPI version](https://badge.fury.io/py/slamon-agent.svg)](http://badge.fury.io/py/slamon-agent)
-[![Coverage Status][coveralls]](https://coveralls.io/github/SLAMon/slamon-python-agent?branch=master)
-[![Code Health][codehealth]](https://landscape.io/github/SLAMon/slamon-python-agent/master)
 [![License][license]](http://www.apache.org/licenses/LICENSE-2.0)
-[![PyPI](https://img.shields.io/pypi/pyversions/slamon-agent.svg)](pypi)
+
+[![Latest PyPI Version](https://badge.fury.io/py/slamon-agent.svg)](http://badge.fury.io/py/slamon-agent)
+[![Supported Python Versions](https://img.shields.io/pypi/pyversions/slamon-agent.svg)](pypi)
 [![Requirements Status][requirements_img]](requirements)
 
-[ci_status]: https://travis-ci.org/SLAMon/slamon-python-agent.svg?branch=master
-[latest_version]: https://badge.fury.io/py/slamon-agent.svg
-[coveralls]: https://coveralls.io/repos/SLAMon/slamon-python-agent/badge.svg?branch=master&service=github
-[codehealth]: https://landscape.io/github/SLAMon/slamon-python-agent/master/landscape.svg?style=flat
-[license]: https://img.shields.io/:license-Apache%20License%20v2.0-blue.svg
-[pypi]: https://pypi.python.org/pypi/slamon-agent/
-[requirements_img]: https://requires.io/github/SLAMon/slamon-python-agent/requirements.svg?branch=master
-[requirements]: https://requires.io/github/SLAMon/slamon-python-agent/requirements/?branch=master
+[![Build Status][ci_status]](https://travis-ci.org/SLAMon/slamon-python-agent.svg?branch=master)
+[![Coverage Status][coveralls]](https://coveralls.io/github/SLAMon/slamon-python-agent?branch=master)
+[![Code Health][codehealth]](https://landscape.io/github/SLAMon/slamon-python-agent/master)
 
 Python implementation of [SLAMon](https://github.com/SLAMon/SLAMon) agent.
 
@@ -82,7 +75,7 @@ the modules you want to load task handlers from:
 from my_custom_handler_package import *
 import my_custom_handler_module
 
-from slamon-agent import Agent
+from slamon_agent import Agent
 agent = Agent('http://localhost:8080')
 agent.run()
 ```
@@ -111,3 +104,11 @@ def wait_task_handler(input_params):
    return {'time': timeout}
 ```
 
+[license]: https://img.shields.io/:license-Apache%20License%20v2.0-blue.svg
+[ci_status]: https://travis-ci.org/SLAMon/slamon-python-agent.svg?branch=master
+[coveralls]: https://coveralls.io/repos/SLAMon/slamon-python-agent/badge.svg?branch=master&service=github
+[codehealth]: https://landscape.io/github/SLAMon/slamon-python-agent/master/landscape.svg?style=flat
+[latest_version]: https://badge.fury.io/py/slamon-agent.svg
+[pypi]: https://pypi.python.org/pypi/slamon-agent/
+[requirements_img]: https://requires.io/github/SLAMon/slamon-python-agent/requirements.svg?branch=master
+[requirements]: https://requires.io/github/SLAMon/slamon-python-agent/requirements/?branch=master
