@@ -1,4 +1,4 @@
 responses>=0.3.0,<1.0
 nose>=1.0.0,<2.0
 coverage
-python-coverage
+python-coveralls
