@@ -85,7 +85,7 @@ def main():
     parser.add_argument('-u', '--url', action='store', required=True,
                         help='Coordinator URL')
     parser.add_argument('-l', '--load', action='append',
-                        help='Load handlers from specified module')
+                        help='Load handlers from specified module or package e.g. slamon_agent.handlers')
     parser.add_argument('-w', '--default-wait', type=int, default=60,
                         help='Seconds to wait before reconnection after connection failure.')
     parser.add_argument('-x', '--num-executors', type=int, default=2,
